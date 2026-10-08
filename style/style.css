@@ -1,0 +1,72 @@
+:root{
+  --bg:#eef7fb; --card:#fff; --ciano:#7fd8e6; --ciano-soft:#d9f3f8;
+  --azul:#4a90c2; --azul-soft:#dcecf7; --navy:#12365a; --navy2:#1d4f7c;
+  --txt:#23405c; --muted:#6b86a0; --erro:#c0455a; --ok:#2e8b7a;
+}
+*{box-sizing:border-box;margin:0}
+body{font-family:"Segoe UI",system-ui,sans-serif;background:var(--bg);color:var(--txt);min-height:100vh}
+[hidden]{display:none!important}
+
+.btn{background:var(--navy);color:#fff;border:0;padding:.6rem 1.1rem;border-radius:10px;cursor:pointer;font-size:.95rem;transition:.2s}
+.btn:hover{background:var(--navy2)}
+.btn-ghost{background:transparent;color:var(--navy);border:1px solid var(--azul)}
+.btn-ghost:hover{background:var(--azul-soft)}
+.erro{color:var(--erro);font-size:.9rem}
+
+/* login */
+.login{min-height:100vh;display:grid;place-items:center;padding:1rem;background:linear-gradient(135deg,var(--ciano-soft),var(--azul-soft))}
+.login-card{background:var(--card);padding:2rem;border-radius:18px;width:100%;max-width:380px;box-shadow:0 10px 30px #12365a22;text-align:center}
+.login-card h1{color:var(--navy);margin-bottom:.3rem}
+.login-card p{color:var(--muted);margin-bottom:1.2rem}
+.login-card form{display:grid;gap:1rem;text-align:left}
+
+/* layout */
+.topbar{background:var(--navy);color:#fff;display:flex;justify-content:space-between;align-items:center;padding:.9rem 1.5rem;flex-wrap:wrap;gap:.5rem}
+.topbar h1{font-size:1.25rem}
+.topbar .btn-ghost{color:#fff;border-color:var(--ciano)}
+.topbar .btn-ghost:hover{background:var(--navy2)}
+#usuario{margin-right:.7rem;color:var(--ciano)}
+
+nav{display:flex;gap:.5rem;padding:.8rem 1.5rem;background:var(--ciano-soft);overflow-x:auto}
+nav button{border:0;background:#fff;color:var(--navy);padding:.55rem 1.1rem;border-radius:999px;cursor:pointer;font-size:.95rem;white-space:nowrap;transition:.2s}
+nav button:hover{background:var(--azul-soft)}
+nav button.ativo{background:var(--navy);color:#fff}
+
+main{max-width:1100px;margin:1.5rem auto;padding:0 1rem}
+.view-head{display:flex;gap:.8rem;align-items:center;flex-wrap:wrap;margin-bottom:1rem}
+.view-head h2{color:var(--navy);flex:1;min-width:140px}
+input,select{width:100%;padding:.6rem .8rem;border:1px solid #bcd6e8;border-radius:10px;background:#fff;color:var(--txt);font-size:.95rem}
+input:focus,select:focus{outline:2px solid var(--ciano);border-color:var(--azul)}
+.view-head input{width:240px;max-width:100%}
+
+.table-wrap{background:var(--card);border-radius:14px;box-shadow:0 4px 16px #12365a14;overflow-x:auto}
+table{width:100%;border-collapse:collapse;min-width:560px}
+th{background:var(--azul-soft);color:var(--navy);text-align:left;font-size:.85rem;text-transform:uppercase;letter-spacing:.03em}
+th,td{padding:.8rem 1rem}
+tbody tr{border-top:1px solid #e3eff7}
+tbody tr:hover{background:#f4fbfd}
+td.acoes-td{white-space:nowrap}
+.icone{border:0;background:var(--azul-soft);color:var(--navy);border-radius:8px;padding:.35rem .6rem;cursor:pointer;margin-right:.3rem}
+.icone:hover{background:var(--ciano)}
+.icone.del:hover{background:#f6d3da;color:var(--erro)}
+.badge{padding:.2rem .7rem;border-radius:999px;font-size:.8rem;background:var(--ciano-soft);color:var(--navy2)}
+.badge.ok{background:#d6efe9;color:var(--ok)}
+.vazio{text-align:center;color:var(--muted);padding:2rem}
+
+/* modal */
+dialog{border:0;border-radius:16px;padding:1.5rem;width:min(460px,94vw);margin:auto;box-shadow:0 20px 50px #12365a44}
+dialog::backdrop{background:#12365a88}
+dialog h3{color:var(--navy);margin-bottom:1rem}
+#campos{display:grid;gap:.8rem}
+label{display:grid;gap:.3rem;font-size:.9rem;color:var(--navy2)}
+.acoes{display:flex;justify-content:flex-end;gap:.6rem;margin-top:1.2rem}
+
+#toast{position:fixed;bottom:1.2rem;left:50%;transform:translateX(-50%);background:var(--navy);color:#fff;padding:.7rem 1.2rem;border-radius:10px;z-index:10}
+#toast.err{background:var(--erro)}
+footer{text-align:center;color:var(--muted);padding:1.5rem;font-size:.85rem}
+
+@media(max-width:600px){
+  .topbar,nav{padding-left:1rem;padding-right:1rem}
+  .view-head input{width:100%}
+  .view-head .btn{width:100%}
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Biblioteca Escolar</title>
+  <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+
+  <!-- LOGIN (tabela funcionario) -->
+  <main id="login" class="login">
+    <section class="login-card">
+      <h1>📚 Biblioteca Escolar</h1>
+      <p>Acesso para funcionários</p>
+      <form id="loginForm">
+        <label>Login <input name="login" required autocomplete="username"></label>
+        <label>Senha <input name="senha" type="password" required autocomplete="current-password"></label>
+        <button class="btn" type="submit">Entrar</button>
+        <p id="loginErro" class="erro" hidden></p>
+      </form>
+    </section>
+  </main>
+
+  <!-- APLICAÇÃO -->
+  <div id="app" hidden>
+    <header class="topbar">
+      <h1>📚 Biblioteca Escolar</h1>
+      <div><span id="usuario"></span> <button id="sair" class="btn btn-ghost">Sair</button></div>
+    </header>
+
+    <nav id="menu" aria-label="Menu principal">
+      <button data-view="livro" class="ativo">Livros</button>
+      <button data-view="estudante">Estudantes</button>
+      <button data-view="emprestimo">Empréstimos</button>
+      <button data-view="funcionario">Funcionários</button>
+    </nav>
+
+    <main>
+      <section>
+        <header class="view-head">
+          <h2 id="titulo"></h2>
+          <input id="busca" type="search" placeholder="Buscar...">
+          <button id="novo" class="btn">+ Novo</button>
+        </header>
+        <div class="table-wrap">
+          <table>
+            <thead id="thead"></thead>
+            <tbody id="tbody"></tbody>
+          </table>
+        </div>
+        <p id="vazio" class="vazio" hidden>Nenhum registro encontrado.</p>
+      </section>
+    </main>
+
+    <footer>Biblioteca Escolar &copy; 2026</footer>
+  </div>
+
+  <dialog id="modal">
+    <form id="form">
+      <h3 id="modalTitulo"></h3>
+      <div id="campos"></div>
+      <div class="acoes">
+        <button type="button" id="cancelar" class="btn btn-ghost">Cancelar</button>
+        <button type="submit" class="btn">Salvar</button>
+      </div>
+    </form>
+  </dialog>
+
+  <div id="toast" role="status" hidden></div>
+  <script src="js/app.js"></script>
+</body>
+</html>
